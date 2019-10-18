@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Should I Deploy Today?</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/application.css" />
+    <script type="text/javascript" src="/javascripts/application.js"></script>
+  </head>
+
+  <body class="font-sans antialiased m-12" data-controller="application">
+    <h1
+      class="font-semibold text-6xl text-green-600 text-center uppercase"
+      data-target="application.yes"
+    >
+      Yes
+    </h1>
+
+    <div class="hidden" data-target="application.no">
+      <h1
+        class="font-semibold text-6xl text-red-600 text-center uppercase"
+        data-target="application.yes"
+      >
+        No
+      </h1>
+      <h2
+        class="mt-12 text-gray-500 hover:text-gray-600 underline text-lg text-center"
+        data-target="application.anti"
+      >
+        <a href="#" data-action="click->application#mipsy">I am @mipsytipsy</a>
+      </h2>
+    </div>
+
+    <div class="hidden" data-target="application.alwaysYes">
+      <h1
+        class="font-semibold text-6xl text-red-600 text-center uppercase"
+        data-target="application.yes"
+      >
+        In that case, Yes
+      </h1>
+      <h2 class="mt-12 text-gray-500 text-lg text-center" data-target="application.anti">
+        And if you don't you are
+        <a
+          href="https://charity.wtf/2019/05/01/friday-deploy-freezes-are-exactly-like-murdering-puppies/"
+          class="hover:text-gray-700 underline"
+          data-action="click->application#but"
+          >literally Hitler</a
+        >
+      </h2>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+publish/*
+!publish/images
+node_modules
