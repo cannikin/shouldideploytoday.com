@@ -2,15 +2,15 @@
 
 import { Controller } from "stimulus";
 
+const DEPLOY_DAYS = [1, 2, 3, 4];
+
 export default class extends Controller {
   static get targets() {
     return ["yes", "no", "alwaysYes"];
   }
 
   connect() {
-    const today = new Date().getDay();
-
-    if (today == 5) {
+    if (!this.shouldDeployToday) {
       this.yesTarget.classList.add("hidden");
       this.noTarget.classList.remove("hidden");
     }
@@ -20,5 +20,9 @@ export default class extends Controller {
     event.preventDefault();
     this.noTarget.classList.add("hidden");
     this.alwaysYesTarget.classList.remove("hidden");
+  }
+
+  get shouldDeployToday() {
+    return DEPLOY_DAYS.indexOf(new Date().getDay()) !== -1;
   }
 }
